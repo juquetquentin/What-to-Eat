@@ -1,0 +1,37 @@
+<%= form_with(model: plat, local: true) do |form| %>
+  <% if plat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plat.errors.count, "error") %> prohibited this plat from being saved:</h2>
+
+      <ul>
+      <% plat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :plat_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :plat_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.text_field :day, id: :plat_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :plat_picture %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

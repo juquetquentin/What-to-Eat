@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Day</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plats.each do |plat| %>
+      <tr>
+        <td><%= plat.name %></td>
+        <td><%= plat.price %></td>
+        <td><%= plat.day %></td>
+        <td><%= plat.picture %></td>
+        <td><%= link_to 'Show', plat %></td>
+        <td><%= link_to 'Edit', edit_plat_path(plat) %></td>
+        <td><%= link_to 'Destroy', plat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plat', new_plat_path %>
